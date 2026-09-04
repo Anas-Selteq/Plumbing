@@ -1,0 +1,125 @@
+.section {
+  background: #fff;
+  padding: 5.5rem 1.5rem;
+}
+
+.headWrap {
+  max-width: 40rem;
+  margin: 0 auto 3.25rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #1f6fed;
+  margin: 0 0 0.625rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0e1b33;
+  margin: 0 0 0.875rem;
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 32rem;
+  }
+}
+
+.cardOuter {
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  background: #f4f6fb;
+  border-radius: 1.125rem;
+  padding: 1.75rem 1.75rem 1.5rem;
+  border: 1px solid #e9edf5;
+  transform-style: preserve-3d;
+}
+
+.quoteMark {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.25rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #dbe2ee;
+  line-height: 1;
+  user-select: none;
+  transform: translateZ(20px);
+}
+
+.stars {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 0.875rem;
+  transform: translateZ(15px);
+}
+
+.star {
+  color: #f7a922;
+  fill: #f7a922;
+}
+
+.quoteText {
+  position: relative;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0 0 1.25rem;
+  transform: translateZ(15px);
+}
+
+.name {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #0e1b33;
+  margin: 0;
+  transform: translateZ(15px);
+}
+
+.location {
+  font-size: 0.8125rem;
+  color: #94a3b8;
+  margin: 0.125rem 0 0;
+  transform: translateZ(15px);
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.footerText {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.footerCount {
+  font-weight: 700;
+  color: #1f6fed;
+}

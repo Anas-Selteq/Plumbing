@@ -1,0 +1,141 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(120% 140% at 50% -10%, #3b8bf0 0%, #1f6fed 45%, #1655c4 100%);
+  padding: 5.5rem 1.5rem 4.5rem;
+  text-align: center;
+}
+
+.inner {
+  position: relative;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  padding: 0.5rem 1.125rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.star {
+  color: #f7a922;
+  fill: #f7a922;
+}
+
+.title {
+  margin: 1.5rem 0 0;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+.titleAccent {
+  display: block;
+  color: #f7a922;
+}
+
+.tagline {
+  margin: 1.25rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f7a922;
+}
+
+.copy {
+  margin: 0.875rem auto 0;
+  max-width: 38rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: #dbe9ff;
+}
+
+.buttonRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  background: #f7a922;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #17233d;
+  text-decoration: none;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.secondaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.9rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 3.25rem;
+}
+
+@media (max-width: 800px) {
+  .statGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+}
+
+.statIcon {
+  color: #f7a922;
+}
+
+.statValue {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.statLabel {
+  font-size: 0.8125rem;
+  color: #cfe0ff;
+}

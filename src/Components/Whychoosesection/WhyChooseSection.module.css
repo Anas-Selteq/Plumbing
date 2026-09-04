@@ -1,0 +1,186 @@
+.section {
+  background: #eef1f8;
+  padding: 5.5rem 1.5rem;
+}
+
+.headWrap {
+  max-width: 40rem;
+  margin: 0 auto 3.25rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #1f6fed;
+  margin: 0 0 0.625rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0e1b33;
+  margin: 0 0 0.875rem;
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.accent {
+  color: #1f6fed;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Spotlight card */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 1.125rem;
+  padding: 1.75rem 1.75rem 1.875rem;
+  border: 1px solid #eef1f6;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  cursor: default;
+}
+
+.cardSpotlight {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    480px circle at var(--x, 50%) var(--y, 50%),
+    rgba(31, 111, 237, 0.1),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.card:hover .cardSpotlight {
+  opacity: 1;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+.iconRing {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 0.75rem;
+  background: #eaf1ff;
+  color: #1f6fed;
+  margin-bottom: 1.125rem;
+}
+
+.iconRing::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 0.95rem;
+  border: 1.5px solid rgba(31, 111, 237, 0.35);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .iconRing::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card:hover .iconRing {
+  animation: iconPulse 0.5s ease;
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.12) rotate(-6deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.cardTitle {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #0e1b33;
+  margin: 0 0 0.5rem;
+}
+
+.cardText {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Magnetic CTA */
+.ctaWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.magneticOuter {
+  display: inline-block;
+}
+
+.ctaBtn {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f7a922;
+  color: #17233d;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1.875rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 15px 25px rgba(247, 169, 34, 0.3);
+}
+
+.ctaShine {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.35), transparent);
+}
