@@ -136,22 +136,16 @@ export default function Hero() {
           <motion.span variants={item} className={styles.eyebrow}>
             <span className={styles.flickerWrap}>
               <Zap size={13} strokeWidth={2.5} />
-              24/7 Emergency &amp; General Plumbing in Birmingham
+              24/7 Emergency & General Plumbing in Birmingham
             </span>
           </motion.span>
 
           <motion.h1 variants={item} className={styles.headline}>
-            Birmingham&apos;s Trusted 24/7
-            <br />
-            Emergency Plumbing
-            <br />
-            Experts
+            24/7 Emergency Plumber in Birmingham For Fast, Reliable Repairs
           </motion.h1>
 
           <motion.p variants={item} className={styles.copy}>
-            Need a plumber today? Our experienced team is available 24/7 for
-            emergency callouts, plumbing repairs, installations, and
-            maintenance. We arrive quickly, solve the problem professionally.
+            Need a plumber today? Our experienced team is available 24/7 for emergency callouts, plumbing repairs, installations and maintenance across Birmingham. Whether you're dealing with a burst pipe, leaking tap, blocked drain or another urgent plumbing problem, our Emergency Plumber in Birmingham service is ready to respond quickly and get the problem sorted professionally.
           </motion.p>
 
           <motion.div variants={item} className={styles.buttonRow}>
@@ -162,7 +156,7 @@ export default function Hero() {
               className={styles.primaryBtn}
             >
               <Calendar size={18} strokeWidth={2.5} />
-              Book Now
+              Call a Plumber Now
             </motion.a>
             <motion.a
               href="#message"
@@ -171,7 +165,7 @@ export default function Hero() {
               className={styles.secondaryBtn}
             >
               <MessageCircle size={18} strokeWidth={2.5} />
-              Message us
+              WhatsApp Us
             </motion.a>
           </motion.div>
         </motion.div>
