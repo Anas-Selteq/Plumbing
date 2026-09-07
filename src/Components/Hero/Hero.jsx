@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
   motion,
@@ -13,10 +13,14 @@ import { Calendar, MessageCircle, ChevronLeft, ChevronRight, Zap, Phone, ShieldC
 import styles from "./Hero.module.css";
 
 const SLIDES = [
-  "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1607472829322-9d4dd5f9e0d5?q=80&w=1400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1400&auto=format&fit=crop",
+  "https://d3mjveznuygujv.cloudfront.net/Flow-Fix-24-7/emergency-plumbing.webp",
+  "https://d3mjveznuygujv.cloudfront.net/Flow-Fix-24-7/emergency-plumbing-2.webp",
+  "https://d3mjveznuygujv.cloudfront.net/Flow-Fix-24-7/emergency-plumbing-3.webp",
+  "https://d3mjveznuygujv.cloudfront.net/Flow-Fix-24-7/emergency-plumbing-4.webp",
+  "https://d3mjveznuygujv.cloudfront.net/Flow-Fix-24-7/emergency-plumbing-5.webp",
 ];
+
+
 
 const STATS = [
   { icon: CheckCircle2, value: "5,000+", label: "Jobs Completed" },
@@ -45,9 +49,47 @@ const statCard = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
+const AUTOPLAY_DELAY = 4500;
+
+// Diagonal-feeling clip-path wipe instead of a plain slide/fade — the
+// incoming slide reveals itself edge-first rather than just sliding over.
+const slideVariants = {
+  enter: (dir) => ({
+    clipPath: dir > 0 ? "inset(0 0 0 100%)" : "inset(0 100% 0 0)",
+    scale: 1.12,
+    filter: "brightness(1.3)",
+  }),
+  center: {
+    clipPath: "inset(0 0 0 0)",
+    scale: 1,
+    filter: "brightness(1)",
+  },
+  exit: (dir) => ({
+    clipPath: dir > 0 ? "inset(0 100% 0 0)" : "inset(0 0 0 100%)",
+    scale: 1.12,
+    filter: "brightness(0.85)",
+  }),
+};
+
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [isPaused, setIsPaused] = useState(false);
+
+  function go(dir) {
+    setDirection(dir);
+    setIndex((i) => (i + dir + SLIDES.length) % SLIDES.length);
+  }
+
+  // Autoplay — pauses while the user's cursor is over the carousel, and the
+  // timer restarts fresh every time `index` changes (auto or manual) so a
+  // manual click never gets immediately overridden by a queued auto-advance.
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => go(1), AUTOPLAY_DELAY);
+    return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPaused, index]);
 
   const cardRef = useRef(null);
   const mvX = useMotionValue(0);
@@ -73,11 +115,6 @@ export default function Hero() {
     mvY.set(0);
   }
 
-  function go(dir) {
-    setDirection(dir);
-    setIndex((i) => (i + dir + SLIDES.length) % SLIDES.length);
-  }
-
   return (
     <section className={styles.hero}>
       <div className={styles.glowWrap}>
@@ -97,8 +134,10 @@ export default function Hero() {
         {/* Copy */}
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.span variants={item} className={styles.eyebrow}>
-            <Zap size={13} strokeWidth={2.5} />
-            24/7 Emergency &amp; General Plumbing in Birmingham
+            <span className={styles.flickerWrap}>
+              <Zap size={13} strokeWidth={2.5} />
+              24/7 Emergency &amp; General Plumbing in Birmingham
+            </span>
           </motion.span>
 
           <motion.h1 variants={item} className={styles.headline}>
@@ -148,7 +187,11 @@ export default function Hero() {
           <motion.div
             ref={cardRef}
             onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
+            onMouseLeave={() => {
+              handleMouseLeave();
+              setIsPaused(false);
+            }}
+            onMouseEnter={() => setIsPaused(true)}
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
             className={styles.imageCard}
           >
@@ -156,10 +199,11 @@ export default function Hero() {
               <motion.div
                 key={index}
                 custom={direction}
-                initial={{ opacity: 0, x: direction * 60 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -direction * 60 }}
-                transition={{ duration: 0.45, ease: "easeInOut" }}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.7, ease: [0.65, 0, 0.35, 1] }}
                 className={styles.slide}
               >
                 <Image

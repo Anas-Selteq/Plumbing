@@ -12,7 +12,7 @@ import { CheckCircle2, ArrowRight, Wrench } from "lucide-react";
 import styles from "./AboutSection.module.css";
 
 // TODO: swap for a real photo of the team / a job in progress
-const ABOUT_IMAGE = "https://picsum.photos/seed/about-flowfix/700/770";
+const ABOUT_IMAGE = "https://d3mjveznuygujv.cloudfront.net/Flow-Fix-24-7/local-plumbing-team.webp";
 
 const CHECKLIST = [
 //   "Professional workmanship on every job",

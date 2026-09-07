@@ -66,8 +66,6 @@
 
 .eyebrow {
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 9999px;
@@ -76,6 +74,57 @@
   font-weight: 700;
   color: #7fb4ff;
   margin-bottom: 1.25rem;
+}
+
+.flickerWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: neonFlicker 6s infinite;
+}
+
+/* Mimics a faulty neon/motel sign: a couple of quick irregular stutters,
+   then a steady glowing hold, then it happens again later in the loop. */
+@keyframes neonFlicker {
+  0%, 2%, 8%, 70%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 6px rgba(127, 180, 255, 0.85), 0 0 16px rgba(31, 111, 237, 0.5);
+  }
+  3% {
+    opacity: 0.35;
+    text-shadow: none;
+  }
+  4% {
+    opacity: 0.9;
+    text-shadow: 0 0 3px rgba(127, 180, 255, 0.4);
+  }
+  5% {
+    opacity: 0.25;
+    text-shadow: none;
+  }
+  6% {
+    opacity: 1;
+    text-shadow: 0 0 6px rgba(127, 180, 255, 0.85), 0 0 16px rgba(31, 111, 237, 0.5);
+  }
+  7% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+  71% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+  72% {
+    opacity: 1;
+  }
+  73% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+  74%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 6px rgba(127, 180, 255, 0.85), 0 0 16px rgba(31, 111, 237, 0.5);
+  }
 }
 
 .copy {

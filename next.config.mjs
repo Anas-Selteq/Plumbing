@@ -14,6 +14,7 @@ const nextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "picsum.photos" },
       { protocol: "https", hostname: "flowfix247.co.uk" },
+      { protocol: "https", hostname: "d3mjveznuygujv.cloudfront.net" },
     ],
   },
 };
