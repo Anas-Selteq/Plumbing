@@ -22,37 +22,36 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponen
 
 const REASONS = [
   {
-    icon: ShieldCheck,
-    title: "1-Year Warranty",
-    text: "Every single job we do is backed by a full 12-month warranty. No exceptions.",
+    icon: PhoneCall,
+    title: "24/7 Emergency Plumbing Support",
+    text: "Our team is available 24/7 for emergency plumbing callouts, with free phone advice whenever you need help deciding what to do next.",
   },
   {
-    icon: Archive,
-    title: "Receipts Stored Safely",
-    text: "We keep every material receipt in our system. If a product is under factory warranty, we have the proof — saving you hundreds.",
+    icon: ShieldCheck,
+    title: "1-Year Workmanship Warranty",
+    text: "Every job is backed by a 12-month workmanship warranty, giving you clear cover after your plumbing work has been completed.",
   },
   {
     icon: FileText,
     title: "Detailed Job Reports",
-    text: "Every job comes with a professional report including photos and notes. Perfect for your records or insurance claims.",
+    text: "Every completed job comes with a professional report containing useful notes and photographs of the work carried out, giving you a clear record for future reference.",
+  },
+  {
+    icon: Archive,
+    title: "Receipts Stored Safely",
+    text: "We keep records of material receipts used for your job. Where relevant, this can help you access manufacturer or product warranty support without having to search for old paperwork yourself.",
   },
   {
     icon: FolderOpen,
-    title: "Insurance-Ready Reports",
-    text: "We work with insurers and provide the best documentation so you can claim back your money — hassle-free.",
-  },
-  {
-    icon: PhoneCall,
-    title: "24/7 Free Phone Advice",
-    text: "Our customer service team picks up the phone around the clock. Call us for free advice on any plumbing issue.",
+    title: "Insurance-Ready Documentation",
+    text: "For plumbing work that may need to be documented for an insurance claim, our detailed reports, photographs and job records give you useful evidence of the work completed.",
   },
   {
     icon: Heart,
     title: "Your Plumber for Life",
-    text: "Every job, every receipt, every report — stored forever in your personal portal. We're with you for the long haul.",
+    text: "We keep your job history, reports, receipts and warranty information organised in one place, helping you keep track of previous plumbing work and making future repairs easier to manage.",
   },
 ];
-
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
@@ -142,11 +141,11 @@ export default function WhyChooseSection() {
   return (
     <section id="why-us" className={styles.section}>
       <div className={styles.headWrap}>
-        <p className={styles.eyebrow}>WHY CHOOSE US</p>
-        <h2 className={styles.title}>We&apos;re Not Just Plumbers We&apos;re Your Partners</h2>
+        <p className={styles.eyebrow}>Why Choose Flow Fix 24/7?</p>
+        <h2 className={styles.title}>More Than Just a Local Plumbing Service</h2>
         <p className={styles.subtitle}>
-          Most plumbers fix and forget. We fix, document, store, and stay with{" "}
-          <span className={styles.accent}>you</span> for life. Here&apos;s what sets us apart:
+          Reliable plumbing from start to finish. Flow Fix 24/7 provides professional repairs,
+          emergency callouts and installations across Birmingham, with clear communication and detailed job records.
         </p>
       </div>
 
