@@ -108,9 +108,9 @@
 
 .footerRow {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
   margin-top: 2.5rem;
 }
 
@@ -122,4 +122,18 @@
 .footerCount {
   font-weight: 700;
   color: #1f6fed;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1f6fed;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.8rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 22px rgba(31, 111, 237, 0.25);
 }

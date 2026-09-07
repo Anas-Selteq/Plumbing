@@ -12,6 +12,12 @@ import ReviewsSection from "@/Components/Reviewssection/Reviewssection";
 import ContactSection from "@/Components/Contactsection/Contactsection";
 import Footer from "@/Components/Footer/Footer";
 import ScrollProgressBar from "@/Components/Scrollprogressbar/Scrollprogressbar";
+import HeroStats from "@/Components/Herostats/Herostats";
+import AboutSection from "@/Components/Aboutus/Aboutus";
+import ProcessSection from "@/Components/Processsection/Processsection";
+import RecentWorkSection from "@/Components/Recentworksection/Recentworksection";
+import AreasWeCoverSection from "@/Components/Areaswecoversection/Areaswecoversection";
+import FAQSection from "@/Components/Faqsection/Faqsection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,13 +42,19 @@ export default function Home() {
       <div>
         <Navbar />
         <Hero />
+        {/* <HeroStats /> */}
         <BookingSection />
+        <AboutSection />
         {/* <ScrollDivider /> */}
-        <TrustSection />
+        {/* <TrustSection /> */}
         <ServicesSection />
+        <ProcessSection />
+        <RecentWorkSection />
+        <AreasWeCoverSection />
         <WhyChooseSection />
         <ReviewsSection />
         <ContactSection />
+        <FAQSection />
         <Footer />
       </div>
     </>

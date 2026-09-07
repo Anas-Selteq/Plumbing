@@ -1,0 +1,195 @@
+.section {
+  position: relative;
+  background: #f8fafc;
+  padding: 5.5rem 1.5rem;
+}
+
+.headWrap {
+  max-width: 42rem;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #1f6fed;
+  margin: 0 0 0.625rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0e1b33;
+  margin: 0 0 0.875rem;
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.65;
+}
+
+.timelineWrap {
+  position: relative;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.trackCol {
+  position: absolute;
+  left: 1.5rem;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 3px;
+}
+
+@media (min-width: 640px) {
+  .trackCol {
+    left: 1.75rem;
+  }
+}
+
+.track {
+  position: absolute;
+  inset: 0;
+  background: #e2e8f0;
+  border-radius: 9999px;
+}
+
+.progressLine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #1f6fed, #f7a922);
+  border-radius: 9999px;
+  transform-origin: top;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 2.75rem;
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+.markerCol {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 3.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 9999px;
+  background: #fff;
+  border: 2.5px solid #e2e8f0;
+  color: #94a3b8;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+.markerActive {
+  background: linear-gradient(135deg, #1f6fed, #1c53c9);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(31, 111, 237, 0.35);
+}
+
+.markerRing {
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  border: 2px solid rgba(31, 111, 237, 0.35);
+  opacity: 0;
+}
+
+.markerActive .markerRing {
+  opacity: 1;
+  animation: ringPulse 1.8s ease-out infinite;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.stepCard {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #eef1f6;
+  border-radius: 1.125rem;
+  padding: 1.375rem 1.5rem;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+}
+
+.stepLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #1f6fed;
+  margin: 0 0 0.375rem;
+}
+
+.stepTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0e1b33;
+  margin: 0 0 0.5rem;
+}
+
+.stepText {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0;
+}
+
+.ctaWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
+.ctaBtn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1f6fed;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.9rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 15px 25px rgba(31, 111, 237, 0.28);
+}
+
+.ctaShine {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+}

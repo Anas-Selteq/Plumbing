@@ -9,13 +9,20 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { Calendar, MessageCircle, ChevronLeft, ChevronRight, Siren } from "lucide-react";
+import { Calendar, MessageCircle, ChevronLeft, ChevronRight, Zap, Phone, ShieldCheck, Star, CheckCircle2 } from "lucide-react";
 import styles from "./Hero.module.css";
 
 const SLIDES = [
   "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1400&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1607472829322-9d4dd5f9e0d5?q=80&w=1400&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1400&auto=format&fit=crop",
+];
+
+const STATS = [
+  { icon: CheckCircle2, value: "5,000+", label: "Jobs Completed" },
+  { icon: Phone, value: "24/7", label: "Emergency Support" },
+  { icon: ShieldCheck, value: "12 Months", label: "Workmanship Warranty" },
+  { icon: Star, value: "500+", label: "Customer Reviews" },
 ];
 
 const container = {
@@ -26,6 +33,16 @@ const container = {
 const item = {
   hidden: { opacity: 0, y: 22 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const statContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+};
+
+const statCard = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 export default function Hero() {
@@ -79,13 +96,15 @@ export default function Hero() {
       <div className={styles.inner}>
         {/* Copy */}
         <motion.div variants={container} initial="hidden" animate="show">
+          <motion.span variants={item} className={styles.eyebrow}>
+            <Zap size={13} strokeWidth={2.5} />
+            24/7 Emergency &amp; General Plumbing in Birmingham
+          </motion.span>
+
           <motion.h1 variants={item} className={styles.headline}>
             Birmingham&apos;s Trusted 24/7
             <br />
-            <span className={styles.headlineLine}>
-              <Siren className={styles.siren} size={36} />
-              Emergency Plumbing
-            </span>
+            Emergency Plumbing
             <br />
             Experts
           </motion.h1>
@@ -198,6 +217,31 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      <motion.div
+        className={styles.statGrid}
+        variants={statContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.4 }}
+      >
+        {STATS.map((s) => {
+          const Icon = s.icon;
+          return (
+            <motion.div
+              key={s.value}
+              variants={statCard}
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 280, damping: 22 }}
+              className={styles.statCard}
+            >
+              <Icon size={22} className={styles.statIcon} />
+              <p className={styles.statValue}>{s.value}</p>
+              <p className={styles.statLabel}>{s.label}</p>
+            </motion.div>
+          );
+        })}
+      </motion.div>
     </section>
   );
 }

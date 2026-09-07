@@ -1,0 +1,239 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: #f8fafc;
+  padding: 5.5rem 1.5rem;
+}
+
+.headWrap {
+  max-width: 44rem;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #1f6fed;
+  margin: 0 0 0.625rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0e1b33;
+  margin: 0 0 0.875rem;
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.65;
+}
+
+.layout {
+  max-width: 78rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Radar map */
+.mapCard {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at 50% 45%, #eef4ff 0%, #dce8fb 100%);
+  border: 1px solid #dbe7fb;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 9999px;
+  border: 1px solid rgba(31, 111, 237, 0.18);
+  transform: translate(-50%, -50%);
+}
+
+.sweep {
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from 0deg, rgba(31, 111, 237, 0.16), transparent 22%, transparent 100%);
+  mix-blend-mode: multiply;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.centerPin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #1f6fed, #1c53c9);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(31, 111, 237, 0.4);
+}
+
+.centerRing {
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  border: 2px solid rgba(31, 111, 237, 0.4);
+  animation: centerPulse 2.4s ease-out infinite;
+}
+
+@keyframes centerPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.centerLabel {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: #0e1b33;
+  white-space: nowrap;
+}
+
+.centerSub {
+  font-size: 0.6875rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.connector {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 1.5px;
+  background: linear-gradient(to right, rgba(31, 111, 237, 0.7), rgba(31, 111, 237, 0));
+  transform-origin: left center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pin {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 9999px;
+  background: #8fb4f0;
+  pointer-events: none;
+}
+
+.pinActive {
+  background: #1f6fed;
+  box-shadow: 0 0 0 4px rgba(31, 111, 237, 0.2);
+}
+
+.pinTooltip {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0e1b33;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.pinTooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #0e1b33;
+}
+
+/* List */
+.listPanel {
+  background: #fff;
+  border: 1px solid #eef1f6;
+  border-radius: 1.5rem;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
+  max-height: 34rem;
+  overflow-y: auto;
+}
+
+.listGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .listGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.375rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: default;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.listItemActive {
+  color: #1f6fed;
+  background: #eef4ff;
+}
+
+.listIcon {
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.listItemActive .listIcon {
+  opacity: 1;
+  transform: scale(1.15);
+}

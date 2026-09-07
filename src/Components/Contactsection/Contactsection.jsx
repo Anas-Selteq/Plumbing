@@ -106,11 +106,10 @@ export default function ContactSection() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
-        <p className={styles.eyebrow}>GET IN TOUCH</p>
-        <h2 className={styles.title}>Ready to Fix Your Plumbing?</h2>
+        <p className={styles.eyebrow}>Need Help Right Now?</p>
+        <h2 className={styles.title}>Got a Plumbing Emergency?</h2>
         <p className={styles.subtitle}>
-          Call us now for free advice, or fill in the form below and we&apos;ll{" "}
-          <span className={styles.accent}>get back</span> to you quickly.
+          Burst pipe, serious leak or blocked toilet? Flow Fix 24/7 is ready to help with fast emergency plumbing across Birmingham. Call now and get your plumbing problem dealt with by a professional team.
         </p>
       </motion.div>
 
@@ -182,9 +181,8 @@ export default function ContactSection() {
           <motion.form animate={shakeControls} onSubmit={handleSubmit} className={styles.formGrid}>
             <div className={styles.fieldGroup}>
               <label
-                className={`${styles.inputLabel} ${
-                  focusedField === "name" ? styles.inputLabelFocused : ""
-                }`}
+                className={`${styles.inputLabel} ${focusedField === "name" ? styles.inputLabelFocused : ""
+                  }`}
               >
                 Your Name
               </label>
@@ -203,9 +201,8 @@ export default function ContactSection() {
 
             <div className={styles.fieldGroup}>
               <label
-                className={`${styles.inputLabel} ${
-                  focusedField === "phone" ? styles.inputLabelFocused : ""
-                }`}
+                className={`${styles.inputLabel} ${focusedField === "phone" ? styles.inputLabelFocused : ""
+                  }`}
               >
                 Phone Number
               </label>
@@ -224,9 +221,8 @@ export default function ContactSection() {
 
             <div className={`${styles.fieldGroup} ${styles.fieldGroupFull}`}>
               <label
-                className={`${styles.inputLabel} ${
-                  focusedField === "email" ? styles.inputLabelFocused : ""
-                }`}
+                className={`${styles.inputLabel} ${focusedField === "email" ? styles.inputLabelFocused : ""
+                  }`}
               >
                 Email Address
               </label>
@@ -245,9 +241,8 @@ export default function ContactSection() {
 
             <div className={`${styles.fieldGroup} ${styles.fieldGroupFull}`}>
               <label
-                className={`${styles.inputLabel} ${
-                  focusedField === "message" ? styles.inputLabelFocused : ""
-                }`}
+                className={`${styles.inputLabel} ${focusedField === "message" ? styles.inputLabelFocused : ""
+                  }`}
               >
                 How Can We Help?
               </label>

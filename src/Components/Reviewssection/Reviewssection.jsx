@@ -9,19 +9,19 @@ import {
   useTransform,
   animate,
 } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ArrowRight } from "lucide-react";
 import styles from "./ReviewsSection.module.css";
 
 const REVIEWS = [
   {
     quote:
-      "Emergency boiler breakdown on Christmas Eve — they came out within 40 minutes! Absolutely brilliant service. Can't recommend them enough.",
+      "Emergency boiler breakdown on Christmas Eve. They came out within 40 minutes! Absolutely brilliant service. Can't recommend them enough.",
     name: "Mohammed A.",
     location: "Erdington",
   },
   {
     quote:
-      "Flow Fix are incredible. They fixed my boiler AND kept the receipt for the part. When it failed again under warranty, they had the proof ready. Saved me over £400!",
+      "Flow Fix are incredible. They fixed my boiler and kept the receipt for the part. When it failed again under warranty, they had the proof ready. Saved me over £400!",
     name: "Sarah Thompson",
     location: "Edgbaston",
   },
@@ -127,6 +127,15 @@ function CountUpFooter() {
         Showing {SHOWN_REVIEWS} of <span className={styles.footerCount}>{count}</span> five-star
         reviews
       </p>
+      <motion.a
+        href="#"
+        whileHover={{ scale: 1.04, y: -2 }}
+        whileTap={{ scale: 0.97 }}
+        className={styles.ctaBtn}
+      >
+        Read More Reviews
+        <ArrowRight size={16} strokeWidth={2.5} />
+      </motion.a>
     </div>
   );
 }
@@ -141,10 +150,12 @@ export default function ReviewsSection() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
-        <p className={styles.eyebrow}>CUSTOMER REVIEWS</p>
-        <h2 className={styles.title}>Thousands of Happy Customers</h2>
+        <p className={styles.eyebrow}>TRUSTED BY BIRMINGHAM CUSTOMERS</p>
+        <h2 className={styles.title}>What Our Customers Say</h2>
         <p className={styles.subtitle}>
-          Real reviews from real customers across Birmingham &amp; the West Midlands.
+          From emergency plumbing callouts to bathroom projects and repairs,
+          customers across Birmingham and the West Midlands choose Flow Fix
+          24/7 for professional service and clear job documentation.
         </p>
       </motion.div>
 
